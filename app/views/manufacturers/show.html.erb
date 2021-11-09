@@ -1,0 +1,29 @@
+<h1>Planes by <%= @planes.manufacturer.name %></h1>
+
+<br/><br/>
+
+<table class="table">
+  <thead>
+    <tr>
+       <th scope="col">Model</th>
+      <th scope="col">Description</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">License Plate</th>
+      <th scope="col">Door Count</th>
+      <th scope="col">Mileage</th>
+</tr>
+  </thead>
+  <tbody>
+  <% @planes.each do |plane| %>
+      <tr>
+        <td><%= link_to plane.model, plane %></td>
+        <td><%= plane.description %></td>
+          <td><%= plane.quantity %></td>
+           <td><%= plane.licensePlate %></td>
+             <td><%= plane.doorCount %></td>
+              <td><%= plane.distacePerGallon %></td>
+      </tr>
+  </tbody>
+  <% end %>
+</table>
+<br>
