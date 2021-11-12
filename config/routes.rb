@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'plane_search/index'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  get 'plane_search/index'=> 'plane_search#index', :as=>'search_page'
   # get 'planes/index'
   # get 'planes/show'
   # get 'manufacturers/index'

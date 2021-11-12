@@ -1,10 +1,20 @@
 class PlaneSearchController < ApplicationController
   def index
-    if params[:search].blank? or params[:manufacturer].blank?
+    if params[:search].blank? or params[:category].blank?
       redirect_to(root_path, alert:'Emplty filed!') and return
-    elseif params[:search].blank? && !params[:manufacturer].blank?
-    cat = params[:manufacturer].downcase
-    category = Manufacturer.all.where()
+    elsif params[:search].blank? && !params[:category].blank?
+      parameter = params[:category]
+      plane = Plane.includes(:manufacturer).all.where(id:parameter)
+      @resultSet = plane
+    elsif !params[:search].blank? && params[:category].blank?
+      parameter = params[:search].downcase
+      @resultSet = Plane.all.where("lower(model) like ?", "%#{parameter}%")
+    else
+      parameter = params[:search].downcase
+      category = params[:category]
+      plane = Plane.includes(:manufacturer).all.where(manufacturer:category)
+      @resultSet = plane.where('lower(model) like ?', "%#{parameter}%")
+    end
     end
   end
-end
+

@@ -36,6 +36,8 @@ group :development, :test do
   gem 'devise'
   gem 'bootstrap', '~> 5.1.3'
   gem 'rubocop', '~> 1.22', require: false
+  gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap4'
 end
 
 group :development do

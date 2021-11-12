@@ -1,5 +1,6 @@
 <h1>All the planes we have to offer!</h1>
 <div class="row">
+<%= will_paginate @categories, renderer: WillPaginate::ActionView::BootstrapLinkRenderer%>
  <% @planes.each do |plane| %>
   <div class="col-sm-6">
     <div class="card">
@@ -16,4 +17,5 @@
     </div>
   </div>
   <% end %>
+  <%= will_paginate @categories %>
 </div>
