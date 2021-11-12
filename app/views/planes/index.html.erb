@@ -1,19 +1,19 @@
-<h1>Planes from this Manufacturer</h1>
-<br/><br/>
-<br/>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Model</th>
-      <th scope="col">Description</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Price</th>
-      <th scope="col">License Plate</th>
-      <th scope="col">Year</th>
-      <th scope="col">Door Count</th>
-      <th scope="col">Mileage</th>
-      <th scope="col">Manufacturer</th>
-  </tr>
-  </thead>
-  <tbody>
-    <tbody>
+<h1>All the planes we have to offer!</h1>
+<div class="row">
+ <% @planes.each do |plane| %>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= plane.model %></h5>
+        <p class="card-text">Number Available: <%= plane.quantity %></p>
+        <p class="card-text">Lincense Plate Number: <%= plane.licensePlate%></p>
+        <p class="card-text">Model Year: </p><%= plane.year%></p>
+        <p class="card-text">No. of Doors: <%= plane.doorCount%></p>
+        <p class="card-text">DistancePerGallon: <%= plane.distacePerGallon%></p>
+        <p class="card-text">Made By: <%= plane.manufacturer.name%></p>
+        <a href="#" class="btn btn-primary">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
