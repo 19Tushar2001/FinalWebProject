@@ -1,9 +1,9 @@
 class PlanesController < ApplicationController
   def index
-    # @planes = Plane.all
-    @planes = Plane.paginate(:page => params[:page], per_page:5)
+    @planes = Plane.all
   end
   def show
     @planes = Plane.find(params[:id])
+    add_breadcrumb "Detailed Information", :planes_path
   end
 end

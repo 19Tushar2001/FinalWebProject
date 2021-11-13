@@ -22,7 +22,13 @@ manufacturer = Manufacturer.create(
   doorCount:Faker::Vehicle.doors,
   distacePerGallon:Faker::Vehicle.engine_size,
   manufacturer:manufacturer
-)
+  )
+query = URI.encode_www_form_component(["Boing", "Airbus"].join(","))
+download_image = URI.open("https://source.unsplash.com/600x600/?#{query}")
+plane.image.attach(io: download_image, filename: "m-#{[plane.model, manufacturer.name].join('-')}.jpg")
+sleep(1)
+
 end
 end
+
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

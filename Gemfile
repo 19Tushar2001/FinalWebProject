@@ -35,9 +35,10 @@ group :development, :test do
   gem 'activeadmin'# Plus integrations with:gem 'devise'
   gem 'devise'
   gem 'bootstrap', '~> 5.1.3'
-  gem 'rubocop', '~> 1.22', require: false
-  gem 'will_paginate', '~> 3.0'
-gem 'will_paginate-bootstrap4'
+ gem 'rubocop'
+gem 'rubocop-rails'
+gem "breadcrumbs_on_rails"
+gem 'image_processing'
 end
 
 group :development do

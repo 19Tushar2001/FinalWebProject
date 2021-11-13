@@ -1,10 +1,10 @@
 class PlaneSearchController < ApplicationController
   def index
-    if params[:search].blank? or params[:category].blank?
+    if params[:search].blank? && params[:category].blank?
       redirect_to(root_path, alert:'Emplty filed!') and return
     elsif params[:search].blank? && !params[:category].blank?
       parameter = params[:category]
-      plane = Plane.includes(:manufacturer).all.where(id:parameter)
+      plane = Manufacturer.find(parameter).plane
       @resultSet = plane
     elsif !params[:search].blank? && params[:category].blank?
       parameter = params[:search].downcase

@@ -11,13 +11,31 @@
   </head>
 
   <body>
+   <%if flash[:notice]%>
+   <p><%= flash[:notice]%>
+   <%end%>
+ <%= link_to image_tag("cart.jpg", width:60),root_path%>
+      <ul>
+      <li>Cart <% if cart.present?%>
+      <sup><%= cart.size %></sup>
+      <ul>
+      <% cart.each do |plane|%>
+      <li>
+      <%= plane.model%><%= link_to '❌DELETE', cart_path(plane), method: :delete %>
+      </li>
+      <%end%>
+      </ul>
+      <%end%>
+      </li>
+      </ul>
+    </ul>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-lg">
     <ul class="list-group list-group-horizontal">
       <li class="list-group-item"><%= link_to "Manufacturers", manufacturers_url%></li>
       <li class="list-group-item"><%= link_to "Planes", planes_url%></li>
-      <li class="list-group-item"><%= link_to "Shopping Cart", "http://127.0.0.1:3000/about/index"%>
-    </ul>
+
+
           <%= form_tag(search_page_path, :method => "get",
         class: 'navbar-form navbar-left') do %>
       <div class="input-group mb-3">

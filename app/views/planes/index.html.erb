@@ -1,21 +1,25 @@
 <h1>All the planes we have to offer!</h1>
 <div class="row">
-<%= will_paginate @categories, renderer: WillPaginate::ActionView::BootstrapLinkRenderer%>
  <% @planes.each do |plane| %>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title"><%= plane.model %></h5>
+      <%# <%= image_tag plane.image , width: "200" , height: "200",alt:"Logo"%> %>
+        <h5 class="card-title"><%= link_to plane.model, plane %></h5>
         <p class="card-text">Number Available: <%= plane.quantity %></p>
-        <p class="card-text">Lincense Plate Number: <%= plane.licensePlate%></p>
-        <p class="card-text">Model Year: </p><%= plane.year%></p>
-        <p class="card-text">No. of Doors: <%= plane.doorCount%></p>
-        <p class="card-text">DistancePerGallon: <%= plane.distacePerGallon%></p>
         <p class="card-text">Made By: <%= plane.manufacturer.name%></p>
-        <a href="#" class="btn btn-primary">Add to Cart</a>
+        <% if cart.include?(plane) %>
+        <%= button_to cart_path(plane), method: :delete do%>
+        Remove From Cart
+        <% end%>
+        <%else%>
+        <%= form_with url: cart_index_path, method: :post do %>
+        <%= hidden_field_tag(:id, plane.id) %>
+        <%= button_tag 'Add to cart' %>
+        <%end%>
+        <%end%>
       </div>
     </div>
   </div>
   <% end %>
-  <%= will_paginate @categories %>
 </div>
