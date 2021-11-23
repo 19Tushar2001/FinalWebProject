@@ -1,0 +1,20 @@
+ <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+      <%# <%= image_tag plane.image , width: "200" , height: "200",alt:"Logo"%> %>
+        <h5 class="card-title"><%= link_to plane.model, plane %></h5>
+        <p class="card-text">Number Available: <%= plane.quantity %></p>
+        <p class="card-text">Made By: <%= plane.manufacturer.name%></p>
+        <% if cart.include?(plane) %>
+        <%= button_to cart_path(plane), method: :delete do%>
+        Remove From Cart
+        <% end%>
+        <%else%>
+        <%= form_with url: cart_index_path, method: :post do %>
+        <%= hidden_field_tag(:id, plane.id) %>
+        <%= button_tag 'Add to cart' %>
+        <%end%>
+        <%end%>
+      </div>
+    </div>
+  </div>

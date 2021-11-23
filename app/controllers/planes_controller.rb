@@ -1,6 +1,6 @@
 class PlanesController < ApplicationController
   def index
-    @planes = Plane.all
+    @planes = Plane.all.page(params[:page]).per(10)
   end
   def show
     @planes = Plane.find(params[:id])

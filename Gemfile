@@ -39,6 +39,7 @@ group :development, :test do
 gem 'rubocop-rails'
 gem "breadcrumbs_on_rails"
 gem 'image_processing'
+gem 'kaminari'
 end
 
 group :development do
