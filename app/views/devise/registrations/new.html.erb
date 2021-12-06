@@ -27,7 +27,13 @@
     <%= f.text_field :address, autofocus: true, autocomplete: "address" %>
   </div>
 
+  <div class="field">
 
+    <%= f.label :province_id %><br />
+
+    <%= f.collection_select :province_id,Province.order(:name) , :id, :name %>
+
+  </div>
 
   <div class="field">
     <%= f.label :password %>
@@ -42,20 +48,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="columns">
-  <div class="field column is-4">
-  <div class="control">
-  <label class="label">
-  Province
-  </label>
-  <div class="control has-icons-left">
-  <span class="select">
-  <%= f.input_field :province, collection:  %><br />
-  </span>
-  </div>
-  </div>
-  </div>
-  </div>
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>
