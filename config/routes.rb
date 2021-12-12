@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # get 'manufacturers/show'
   resources :planes
   resources :manufacturers
-  resources :cart, only: %i[create destroy]
+  resources :cart, only: %i[create destroy index]
   root to: "manufacturers#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -31,7 +31,7 @@
    <%if flash[:notice]%>
    <p><%= flash[:notice]%>
    <%end%>
- <%= link_to image_tag("cart.jpg", width:60),root_path%>
+ <%= link_to image_tag("cart.jpg", width:60), cart_index_path%>
       <ul>
       <li>Cart <% if cart.present?%>
       <sup><%= cart.size %></sup>
