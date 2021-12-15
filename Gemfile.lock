@@ -339,7 +339,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   kaminari
   listen (~> 3.3)
-  pg
+  pg (~> 0.18)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)

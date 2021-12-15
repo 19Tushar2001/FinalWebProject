@@ -7,7 +7,7 @@ ruby '2.7.1'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use sqlite3 as the database for Active Record
  gem 'sqlite3', group: :development
- gem 'pg', group: :production
+ gem 'pg', '~> 0.18', group: :production
  gem 'rails_12factor', group: :production
 gem 'activeadmin',group: :production# Plus integrations with:gem 'devise'
 gem 'devise',group: :production
