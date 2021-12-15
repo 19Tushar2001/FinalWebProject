@@ -11,6 +11,8 @@ module PlanesWinnipeg
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.assets.precompile += %w( active_admin.css active_admin/print.css active_admin.js )
+    config.assets.initialize_on_precompile = false
 
     # Configuration for the application, engines, and railties goes here.
     #
