@@ -43,6 +43,13 @@ gem 'image_processing'
 gem 'kaminari'
 end
 
+group :assets do
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'coffee-script-source', '~> 1.4.0' # ADD THIS LINE, 1.5.0 doesn't compile ActiveAdmin JavaScript files
+gem 'uglifier'
+end
+
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
