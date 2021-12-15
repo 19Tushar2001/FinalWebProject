@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :initialize_session
+  before_action :authenticate_user!
   helper_method :cart
   add_breadcrumb "home", :root_path
   add_breadcrumb "Planes by specific manufacturer", :manufacturers_path

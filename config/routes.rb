@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   # get 'manufacturers/index'
   # get 'manufacturers/show'
   resources :planes
-
   resources :manufacturers
   resources :cart, only: %i[create destroy index]
   root to: "manufacturers#index"

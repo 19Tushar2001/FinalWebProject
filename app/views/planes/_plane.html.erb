@@ -11,7 +11,7 @@
         <% end%>
         <%else%>
         <%= form_with url: cart_index_path, method: :post do %>
-        <%= hidden_field_tag(:id, plane.id) %>
+        <%= hidden_field_tag("id", plane.id, :id => plane.id) %>
         <%= button_tag 'Add to cart' %>
         <%end%>
         <%end%>

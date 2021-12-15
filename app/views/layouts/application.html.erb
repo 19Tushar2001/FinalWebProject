@@ -29,7 +29,6 @@
 </p>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-lg">
-
           <%= form_tag(search_page_path, :method => "get",
         class: 'navbar-form navbar-left') do %>
       <div class="input-group mb-3">
@@ -39,18 +38,16 @@
           <%= button_tag "Search", :class => 'btn btn-dark',:name => nil%>
         </div>
       </div>
-      <div>
-
     <% end %>
     </div>
     <ul class="list-group list-group-horizontal">
       <li class="list-group-item text-decoration-none"><%= link_to "Home", manufacturers_url%></li>
       <li class="list-group-item text-decoration-none"><%= link_to "Planes", planes_url%></li>
-        <li class="list-group-item text-decoration-none"><%= link_to 'About Us', permalink_path('about_us') %></li>
-         <li class="list-group-item text-decoration-none"> <%= link_to image_tag("cart.jpg", width:40), cart_index_path%> <sup><%= cart.size %></sup></li>
+      <li class="list-group-item text-decoration-none"><%= link_to 'About Us', permalink_path('about_us') %></li>
+      <li class="list-group-item text-decoration-none"><sup><%=cart.size%></sup><%= link_to image_tag("cart.jpg", width:35,alt:"logo"), cart_index_path%></li>
+      </ul>
   </nav>
     <%= yield %>
-
   </body>
 </html>
 

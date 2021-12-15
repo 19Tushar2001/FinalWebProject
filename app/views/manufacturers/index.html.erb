@@ -1,4 +1,5 @@
 <h2>Manufacturers</h2>
-<% @manufacturers.each do |manufacturer| %><ul class="list-group"> 
-<li class="list-group-item "><%= link_to manufacturer.name, manufacturer %></li>
+<% @manufacturers.each do |manufacturer| %>
+<ul class="list-group"> 
+<li class="list-group-item list-group-item-dark bg-grey text-uppercase text-decoration-none "><%= link_to manufacturer.name, manufacturer %></li>
 </ul><% end %>
