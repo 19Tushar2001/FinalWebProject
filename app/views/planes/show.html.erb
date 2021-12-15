@@ -1,6 +1,8 @@
 <div class="card">
+
   <div class="card-header"><h2><%= @planes.model %></h2></div>
   <div class="card-body">
+  <%= render_breadcrumbs %>
   <ul>
       <li><span class="font-weight-bold"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span><%= image_tag @planes.image %></span></li>
     <li><span class="font-weight-bold">Quantity: </span><span><%= @planes.quantity %></span></li>

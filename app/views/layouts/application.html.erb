@@ -51,7 +51,7 @@
     <ul class="list-group list-group-horizontal">
       <li class="list-group-item"><%= link_to "Manufacturers", manufacturers_url%></li>
       <li class="list-group-item"><%= link_to "Planes", planes_url%></li>
-
+        <li class="list-group-item"><%= link_to 'About Us', permalink_path('about_us') %></li>
 
           <%= form_tag(search_page_path, :method => "get",
         class: 'navbar-form navbar-left') do %>

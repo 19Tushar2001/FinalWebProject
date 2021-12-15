@@ -24,4 +24,6 @@ class CartController < ApplicationController
     @Pst_in_percent = current_user.province.PST
     @Hst_in_percent = current_user.province.HST
   end
+
+
 end
