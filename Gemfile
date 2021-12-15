@@ -8,8 +8,8 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use sqlite3 as the database for Active Record
  gem 'pg', '0.18.1', group: :production
  gem 'rails_12factor', group: :production
-   gem 'activeadmin'# Plus integrations with:gem 'devise'
-  gem 'devise'
+   gem 'activeadmin',group: :production# Plus integrations with:gem 'devise'
+  gem 'devise',group: :production
   gem 'bootstrap', '~> 5.1.3'
  gem 'rubocop'
 gem 'rubocop-rails'
