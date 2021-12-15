@@ -8,6 +8,14 @@ gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use sqlite3 as the database for Active Record
  gem 'pg', '0.18.1', group: :production
  gem 'rails_12factor', group: :production
+   gem 'activeadmin'# Plus integrations with:gem 'devise'
+  gem 'devise'
+  gem 'bootstrap', '~> 5.1.3'
+ gem 'rubocop'
+gem 'rubocop-rails'
+gem "breadcrumbs_on_rails"
+gem 'image_processing'
+gem 'kaminari'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -33,17 +41,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
-  gem 'activeadmin'# Plus integrations with:gem 'devise'
-  gem 'devise'
-  gem 'bootstrap', '~> 5.1.3'
- gem 'rubocop'
-gem 'rubocop-rails'
-gem "breadcrumbs_on_rails"
-gem 'image_processing'
-gem 'kaminari'
+
 end
 
 group :assets do
+
 gem 'coffee-rails'
 gem 'coffee-script-source', '~> 1.4.0' # ADD THIS LINE, 1.5.0 doesn't compile ActiveAdmin JavaScript files
 gem 'uglifier'
