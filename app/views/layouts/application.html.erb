@@ -9,7 +9,6 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
   <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
@@ -28,30 +27,8 @@
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 </p>
-   <%if flash[:notice]%>
-   <p><%= flash[:notice]%>
-   <%end%>
- <%= link_to image_tag("cart.jpg", width:60), cart_index_path%>
-      <ul>
-      <li>Cart <% if cart.present?%>
-      <sup><%= cart.size %></sup>
-      <ul>
-      <% cart.each do |plane|%>
-      <li>
-      <%= plane.model%><%= link_to '❌DELETE', cart_path(plane), method: :delete %>
-      </li>
-      <%end%>
-      </ul>
-      <%end%>
-      </li>
-      </ul>
-    </ul>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-lg">
-    <ul class="list-group list-group-horizontal">
-      <li class="list-group-item"><%= link_to "Manufacturers", manufacturers_url%></li>
-      <li class="list-group-item"><%= link_to "Planes", planes_url%></li>
-        <li class="list-group-item"><%= link_to 'About Us', permalink_path('about_us') %></li>
 
           <%= form_tag(search_page_path, :method => "get",
         class: 'navbar-form navbar-left') do %>
@@ -66,8 +43,14 @@
 
     <% end %>
     </div>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item text-decoration-none"><%= link_to "Home", manufacturers_url%></li>
+      <li class="list-group-item text-decoration-none"><%= link_to "Planes", planes_url%></li>
+        <li class="list-group-item text-decoration-none"><%= link_to 'About Us', permalink_path('about_us') %></li>
+         <li class="list-group-item text-decoration-none"> <%= link_to image_tag("cart.jpg", width:40), cart_index_path%> <sup><%= cart.size %></sup></li>
   </nav>
     <%= yield %>
 
   </body>
 </html>
+
