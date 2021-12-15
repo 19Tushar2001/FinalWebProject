@@ -44,7 +44,6 @@ gem 'kaminari'
 end
 
 group :assets do
-gem 'sass-rails'
 gem 'coffee-rails'
 gem 'coffee-script-source', '~> 1.4.0' # ADD THIS LINE, 1.5.0 doesn't compile ActiveAdmin JavaScript files
 gem 'uglifier'

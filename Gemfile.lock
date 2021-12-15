@@ -107,6 +107,13 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (4.1.0)
+    coffee-rails (5.0.0)
+      coffee-script (>= 2.2.0)
+      railties (>= 5.2.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.4.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     devise (4.8.0)
@@ -288,6 +295,8 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    uglifier (4.2.0)
+      execjs (>= 0.3.0, < 3)
     unicode-display_width (2.1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
@@ -323,6 +332,8 @@ DEPENDENCIES
   breadcrumbs_on_rails
   byebug
   capybara (>= 3.26)
+  coffee-rails
+  coffee-script-source (~> 1.4.0)
   devise
   faker!
   image_processing
@@ -341,6 +352,7 @@ DEPENDENCIES
   spring
   turbolinks (~> 5)
   tzinfo-data
+  uglifier
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
